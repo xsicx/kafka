@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  cli:
+    build:
+      target: dev
+    restart: "unless-stopped"
+    env_file:
+      - .env
+      - .env.local
+    volumes:
+      - ./:/go/src/app
